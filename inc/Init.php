@@ -9,7 +9,8 @@ final class Init
     {
         return [
             Base\SettingLink::class,
-            Base\Assets::class
+            Base\Assets::class,
+            Base\ShortCode::class
         ];
     }
 
