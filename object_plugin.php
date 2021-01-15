@@ -15,3 +15,15 @@ if (!defined('ABSPATH')) {
 if (file_exists(dirname(__FILE__) . "/vendor/autoload.php")) {
     require_once dirname(__FILE__) . "/vendor/autoload.php";
 }
+
+use Inc\Active;
+use Inc\Deactive;
+function activate(){
+    Active::active();
+}
+register_activation_hook( __file__, 'activate');
+
+function deactivate(){
+    Deactive::deactive();
+}
+register_deactivation_hook( __file__,"deactivate");
