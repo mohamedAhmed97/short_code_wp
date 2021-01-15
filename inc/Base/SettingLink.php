@@ -7,7 +7,7 @@ use \Inc\Controller\BaseController;
 class SettingLink extends BaseController
 {
     public function register()
-    {
+    {   
         add_filter("plugin_action_links_$this->plugin_name", array($this, 'settingLink'));
     }
 
