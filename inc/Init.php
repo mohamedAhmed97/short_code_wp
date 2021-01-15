@@ -11,7 +11,7 @@ final class Init
             Base\SettingLink::class,
         ];
     }
-
+    
     public static function registerServices()
     {
         foreach (self::getServices()  as $class) {

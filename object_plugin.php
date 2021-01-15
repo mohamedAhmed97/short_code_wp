@@ -18,12 +18,19 @@ if (file_exists(dirname(__FILE__) . "/vendor/autoload.php")) {
 
 use Inc\Active;
 use Inc\Deactive;
-function activate(){
+
+function activate()
+{
     Active::active();
 }
-register_activation_hook( __file__, 'activate');
+register_activation_hook(__file__, 'activate');
 
-function deactivate(){
+function deactivate()
+{
     Deactive::deactive();
 }
-register_deactivation_hook( __file__,"deactivate");
+register_deactivation_hook(__file__, "deactivate");
+
+if (class_exists('Inc\\Init')) {
+    Inc\Init::registerServices();
+}
