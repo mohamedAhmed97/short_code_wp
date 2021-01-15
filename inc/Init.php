@@ -9,9 +9,10 @@ final class Init
     {
         return [
             Base\SettingLink::class,
+            Base\Assets::class
         ];
     }
-    
+
     public static function registerServices()
     {
         foreach (self::getServices()  as $class) {
