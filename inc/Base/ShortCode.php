@@ -24,7 +24,12 @@ class ShortCode extends BaseController
             'class' => '',
             'id' => '',
         ), $atts);
-        require($this->plugin_path . "/templates/inputs.php");
+?>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"><?php echo $a['placeholder']; ?></label>
+            <input type="<?php echo $a['type']; ?>" class="<?php echo $a['class']; ?>" id="<?php echo $a['id']; ?>" placeholder="<?php echo $a['placeholder']; ?>" />
+        </div>
+    <?php
         return ob_get_clean();
     }
 
@@ -38,7 +43,11 @@ class ShortCode extends BaseController
             'class' => '',
             'id' => '',
         ), $atts);
-        require($this->plugin_path . "/templates/buttons.php");
+    ?>
+        <button type="<?php echo $a['type']; ?>" class="<?php echo $a['class']; ?>" id="<?php echo $a['id']; ?>">
+            <?php echo $a['value']; ?>
+        </button>
+    <?php
         return ob_get_clean();
     }
 
@@ -49,7 +58,7 @@ class ShortCode extends BaseController
         $a = shortcode_atts(array(
             'method' => 'GET',
         ), $atts);
-?>
+    ?>
         <form method="<?php echo $a['method']; ?>">
         <?php
         return ob_get_clean();
