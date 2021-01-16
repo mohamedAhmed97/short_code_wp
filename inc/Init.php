@@ -10,6 +10,7 @@ final class Init
         return [
             Base\SettingLink::class,
             Base\Assets::class,
+            Pages\Admin::class,
             Base\ShortCode::class
         ];
     }

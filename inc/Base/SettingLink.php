@@ -13,7 +13,7 @@ class SettingLink extends BaseController
 
     public function settingLink($links)
     {
-        $setting_link = '<a href="objects.php">setting</a>';
+        $setting_link = '<a href="admin.php?page=object_form">setting</a>';
         array_push($links, $setting_link);
         return $links;
     }
